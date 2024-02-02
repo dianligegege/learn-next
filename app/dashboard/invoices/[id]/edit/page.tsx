@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     fetchInvoiceById(id),
     fetchCustomers(),
   ]);
-  if (invoice.length === 0) {
+  if (!invoice) {
     notFound();
   }
   return (
